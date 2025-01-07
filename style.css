@@ -33,7 +33,7 @@
     margin-left: auto;
     position: relative;
 }
-.filterOptions {
+.filterOption {
     position: absolute;
     top: 100%;
     left: 0;
@@ -41,4 +41,51 @@
     border: 1px solid #ddd;
     padding: 10px;
     z-index: 10000;
+}
+
+.canvasContainer{
+    position:relative;
+}
+
+#eventsContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    position: absolute; 
+    left: 50%; 
+    transform: translateX(-50%);
+}
+
+.eventCanvas {
+    margin: 20px 0;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(50% - 20px);
+    box-sizing: border-box;
+}
+
+.registerBtn {
+    position: absolute;
+    width: 150px;
+    height: 30px;
+    left:400px; 
+    top: 200px; /* Adjust this value to place the button near the bottom of the canvas */
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.registerBtn:hover {
+    background-color: darkblue;
 }
