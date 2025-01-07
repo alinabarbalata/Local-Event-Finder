@@ -76,6 +76,51 @@ window.onload = function () {
         });
     })
 
+    mapBtn.addEventListener('click',function(){
+        eventsContainer.innerHTML = '';
+        navigator.geolocation.getCurrentPosition(onLocationSuccess, onLocationError);
+
+    })
+    function onLocationSuccess(position){
+        let latitude=position.coords.latitude;
+        let longitude=position.coords.longitude;
+
+        let mapContainer=document.createElement('div');
+        mapContainer.id='map';
+        eventsContainer.appendChild(mapContainer);
+
+        const map = L.map('map').setView([latitude, longitude], 17);
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: 'Multimedia'
+        }).addTo(map);
+
+        L.marker([latitude, longitude]).addTo(map);
+        const circle = L.circle([latitude, longitude], {
+            color: 'red',
+            fillColor: '#ff0033',
+            fillOpacity: 0.5,
+            radius: 1500
+        }).addTo(map);
+
+        const bounds = circle.getBounds();
+        const minLat = bounds.getSouthWest().lat;
+        const minLng = bounds.getSouthWest().lng;
+        const maxLat = bounds.getNorthEast().lat;
+        const maxLng = bounds.getNorthEast().lng;
+
+        events.forEach(event => {
+            if (!geolocationCheckbox.checked || (event.latitude >= minLat && event.latitude <= maxLat && event.longitude >= minLng && event.longitude <= maxLng)) {
+                const marker = L.marker([event.latitude, event.longitude]).addTo(map);
+                marker.bindPopup(`<b>${event.name}</b><br>${event.date}<br>${event.location}<br>${event.description}`);
+            }
+        });
+    }
+
+    function onLocationError(error) {
+        console.log(error);
+    }
     function createCanvasForEvent(event) {
         let canvasContainer = document.createElement('div');
         canvasContainer.classList.add('canvasContainer');
