@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Event Finder</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container-fluid topContainer">
+        <h1 class="title">Local Event Finder</h1>
+        <div class="filterContainer">
+            <button type="button" class="customBtn" id="filterBtn">Filter</button>
+            <div class="filterOption" id="filterOption" style="display:none;">
+                <input type="checkbox" id="geolocationCheckbox">
+                <label for="geolocationCheckbox">Events near me</label>
+            </div>
+        </div>
+        <div class="listContainer">
+            <button type="button" class="customBtn" id="listBtn">Show as list</button>
+        </div>
+        <div class="mapContainer">
+            <button type="button" class="customBtn" id="mapBtn">Show on map</button>
+        </div>
+    </div>
+
+    <div id="eventsContainer"></div>
+</body>
+
+</html>

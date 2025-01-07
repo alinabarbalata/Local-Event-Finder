@@ -1,0 +1,44 @@
+.topContainer {
+    background-color: #008ECC;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+}
+
+.title {
+    color: white;
+    font-size: 1em;
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.customBtn{
+    background-color: DeepSkyBlue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 10px;
+    margin-right:20px;
+}
+.customBtn:hover {
+    background-color: #00a1e0;
+}
+.filterContainer {
+    margin-left: auto;
+    position: relative;
+}
+.filterOptions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    z-index: 10000;
+}
