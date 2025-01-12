@@ -1,6 +1,17 @@
 body{
     background-color: aliceblue;
 }
+
+.content{
+    display:block;
+}
+
+@media (max-width: 1199px) {
+    content {
+      display: none;
+    }
+  }
+  
 .topContainer {
     background-color: #008ECC;
     height: 5em;
@@ -20,6 +31,7 @@ body{
     top: 50%;
     transform: translate(-50%, -50%);
 }
+
 .customBtn{
     background-color: DeepSkyBlue;
     color: white;
@@ -29,14 +41,18 @@ body{
     border-radius: 10px;
     margin-right:2em;
 }
+
 .customBtn:hover {
     background-color: #00a1e0;
 }
+
 .filterContainer {
     margin-left: auto;
     position: relative;
 }
+
 .filterOption {
+    display:none;   
     position: absolute;
     top: 100%;
     left: 0;
@@ -68,7 +84,7 @@ body{
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     flex: 1 1 calc(50% - 20px);
-    box-sizing: border-box;
+    box-sizing: border-box; 
 }
 
 .registerBtn {
@@ -101,3 +117,12 @@ body{
     margin-top: 25px;
     margin-bottom: 25px;
 }   
+
+#alertContainer {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    width: 90%;
+}

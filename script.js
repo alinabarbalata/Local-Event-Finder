@@ -62,11 +62,12 @@ window.onload = function () {
         },
     ];
     btnFilter.addEventListener('click', function () {
-        if (filterOption.style.display === 'none') {
-            filterOption.style.display = '';
-        } else {
-            filterOption.style.display = 'none';
-        }
+        if (filterOption.style.display === 'none' || filterOption.style.display === '') {
+            filterOption.style.display = 'block';
+            setTimeout(() => {
+                filterOption.style.display = 'none'; // Add "d-none" back after 3 seconds
+            }, 1500);
+        } 
     });
 
     listBtn.addEventListener('click', function () {
@@ -89,7 +90,7 @@ window.onload = function () {
         mapContainer.id='map';
         eventsContainer.appendChild(mapContainer);
 
-        const map = L.map('map').setView([latitude, longitude], 17);
+        const map = L.map('map').setView([latitude, longitude], 18);
 
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
@@ -149,7 +150,10 @@ window.onload = function () {
             button.classList.add('registerBtn');
             button.textContent = 'Register for event';
             button.addEventListener('click', () => {
-                alert(`Successfully registered for ${event.name}`);
+                alertContainer.classList.remove('d-none'); 
+                setTimeout(() => {
+                    alertContainer.classList.add('d-none'); // Add after 3 seconds
+                }, 3000);
             });
             canvasContainer.appendChild(button);
         };
