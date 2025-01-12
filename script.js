@@ -65,7 +65,7 @@ window.onload = function () {
         if (filterOption.style.display === 'none' || filterOption.style.display === '') {
             filterOption.style.display = 'block';
             setTimeout(() => {
-                filterOption.style.display = 'none'; // Add "d-none" back after 3 seconds
+                filterOption.style.display = 'none'; 
             }, 1500);
         } 
     });
