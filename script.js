@@ -30,8 +30,8 @@ window.onload = function () {
             date: '2025-03-20',
             location: 'Bucharest, University area',
             description: "Lace up your running shoes and join us for the Charity Run in Bucharest's University area.",
-            latitude: 44.4347,
-            longitude: 26.1007
+            latitude: 44.436444, 
+            longitude: 26.102450
         },
         {
             image: './images/event4.jpg',
@@ -39,8 +39,8 @@ window.onload = function () {
             date: '2025-04-25',
             location: 'Bucharest, Dorobanti Street',
             description: "Satisfy your taste buds at the Food Truck Festival on Dorobanti Street.",
-            latitude: 44.4551,
-            longitude: 26.0929
+            latitude: 44.453730, 
+            longitude: 26.098369
         },
         {
             image: './images/event5.jpg',
@@ -48,8 +48,8 @@ window.onload = function () {
             date: '2025-05-30',
             location: 'Bucharest, Piata Unirii',
             description: "Step into the world of science at Piata Unirii's Science Fair.",
-            latitude:44.4276,
-            longitude: 26.1033
+            latitude:44.448338,
+            longitude: 26.107467
         },
         {
             image: './images/event6.jpg',
@@ -57,8 +57,8 @@ window.onload = function () {
             date: '2025-01-10',
             location: 'Bucharest, Gara de Nord',
             description: 'All aboard for the Train Exposition at Gara de Nord!',
-            latitude: 44.4472,
-            longitude: 26.0983
+            latitude: 44.447411, 
+            longitude: 26.075536
         },
     ];
     btnFilter.addEventListener('click', function () {
@@ -93,7 +93,7 @@ window.onload = function () {
 
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
-            attribution: 'Multimedia'
+            attribution: 'Local Event Finder'
         }).addTo(map);
 
         L.marker([latitude, longitude]).addTo(map);
@@ -101,7 +101,7 @@ window.onload = function () {
             color: 'red',
             fillColor: '#ff0033',
             fillOpacity: 0.5,
-            radius: 1500
+            radius: 2000
         }).addTo(map);
 
         const bounds = circle.getBounds();
