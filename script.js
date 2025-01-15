@@ -102,7 +102,7 @@ window.onload = function () {
             color: 'red',
             fillColor: '#ff0033',
             fillOpacity: 0.5,
-            radius: 2000
+            radius: 1500
         }).addTo(map);
 
         const bounds = circle.getBounds();
